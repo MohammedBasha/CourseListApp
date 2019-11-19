@@ -1,0 +1,16 @@
+.courseslist-wrapper form {
+    display: flex;
+}
+
+.courseslist-wrapper form input {
+    padding: 7px;
+}
+
+.courseslist-wrapper form input[type="text"] {
+    flex: 3;
+}
+
+.courseslist-wrapper form input[type="submit"] {
+    flex: 1;
+    cursor: pointer;
+}
