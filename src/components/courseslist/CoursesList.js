@@ -4,16 +4,13 @@ import './CoursesList.css'
 class CoursesList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            courses: []
-        }
     }
 
     render() {
         return (
-            <div>
-                Courses List
-            </div>
+            <li>
+                {this.props.details.name}
+            </li>
         );
     }
 }

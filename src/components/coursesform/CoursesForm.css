@@ -1,5 +1,6 @@
 .courseslist-wrapper form {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .courseslist-wrapper form input {
