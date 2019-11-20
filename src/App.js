@@ -40,6 +40,13 @@ class App extends Component {
     this.setState({courses});
   }
 
+  editCourse = (index, value) => {
+    let {courses} = this.state,
+        course= courses[index];
+    course['name'] = value;
+    this.setState({courses});
+  }
+
   render() {
     const {courses} = this.state,
           coursesList = (courses.length) ? (
@@ -49,6 +56,7 @@ class App extends Component {
                           index={index}
                           details={course}
                           deleteCourse={this.deleteCourse}
+                          editCourse={this.editCourse}
                       />
             })
           ) : (
