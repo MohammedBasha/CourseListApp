@@ -9,7 +9,8 @@ class CoursesList extends Component {
     render() {
         return (
             <li>
-                {this.props.details.name}
+                <span>{this.props.details.name}</span>
+                <button onClick={_ => this.props.deleteCourse(this.props.index)}>Delete</button>
             </li>
         );
     }

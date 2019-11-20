@@ -24,7 +24,7 @@ class App extends Component {
   addCourse = e => {
     e.preventDefault();
     let inputVal = e.target.coursename.value,
-        courses = this.state.courses;
+        {courses} = this.state;
     if(inputVal !== '') {
       courses.push({name: inputVal});
       this.setState({
@@ -34,11 +34,26 @@ class App extends Component {
     } else return false;
   }
 
+  deleteCourse = index => {
+    let {courses} = this.state;
+    courses = this.state.courses.filter(course => courses.indexOf(course) !== index);
+    this.setState({courses});
+  }
+
   render() {
     const {courses} = this.state,
-          coursesList = courses.map((course, index) => {
-            return <CoursesList key={index} details={course} />
-          });
+          coursesList = (courses.length) ? (
+              courses.map((course, index) => {
+              return <CoursesList
+                          key={index}
+                          index={index}
+                          details={course}
+                          deleteCourse={this.deleteCourse}
+                      />
+            })
+          ) : (
+            <li>No couses, Please add courses to show.</li>
+          );
     return (
       <div className="courseslist-wrapper">
         <h1>Courses List</h1>
