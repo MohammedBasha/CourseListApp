@@ -11,19 +11,42 @@ class App extends Component {
         {name: 'HTML'},
         {name: 'CSS'},
         {name: 'jQuery'}
-      ]
+      ],
+      current: '' // this property to control the input value after submit course name
     }
+  }
+
+  updateCourse = e => {
+    let current = e.target.value;
+    this.setState({current});
+  }
+
+  addCourse = e => {
+    e.preventDefault();
+    let inputVal = e.target.coursename.value,
+        courses = this.state.courses;
+    if(inputVal !== '') {
+      courses.push({name: inputVal});
+      this.setState({
+        courses,
+        current: ''
+      });
+    } else return false;
   }
 
   render() {
     const {courses} = this.state,
-          coursesList = courses.map(course => {
-            return <CoursesList details={course} />
+          coursesList = courses.map((course, index) => {
+            return <CoursesList key={index} details={course} />
           });
     return (
       <div className="courseslist-wrapper">
         <h1>Courses List</h1>
-        <CoursesForm />
+        <CoursesForm
+            updateCourse={this.updateCourse}
+            addCourse={this.addCourse}
+            currentVal={this.state.current}
+        />
         <ul>
           {coursesList}
         </ul>

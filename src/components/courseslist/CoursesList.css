@@ -1,0 +1,8 @@
+.courseslist-wrapper ul {
+    padding: 0;
+    margin: 0;
+}
+
+.courseslist-wrapper li {
+    list-style-type: none;
+}
