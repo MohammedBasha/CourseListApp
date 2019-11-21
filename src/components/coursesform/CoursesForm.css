@@ -4,14 +4,30 @@
 }
 
 .courseslist-wrapper form input {
-    padding: 7px;
+    padding: 10px;
 }
 
-.courseslist-wrapper form input[type="text"] {
-    flex: 3;
+.courseslist-wrapper .add-form input[type="text"] {
+    flex: 4;
 }
 
-.courseslist-wrapper form input[type="submit"] {
-    flex: 1;
+.courseslist-wrapper .add-form input[type="submit"] {
+    flex: .93;
     cursor: pointer;
+}
+
+.add-form input[type="text"], .update-form input {
+    border: 0;
+    background-color: #999;
+    color: #fff;
+}
+
+.add-form input[type="text"]::placeholder {
+    color: #fff;
+}
+
+.add-form input[type="submit"], .update-form button {
+    background-color: green;
+    color: #fff;
+    border: 0;
 }

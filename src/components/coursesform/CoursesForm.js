@@ -3,11 +3,11 @@ import './CoursesForm.css'
 
 const CoursesForm = props => {
     return(
-        <form onSubmit={props.addCourse}>
+        <form className="add-form" onSubmit={props.addCourse}>
             <input type="text"
                     name="coursename"
                     id="coursename"
-                    placeholder="Add a Course"
+                    placeholder="Type a Course"
                     onChange={props.updateCourse}
                     value={props.currentVal}
             />

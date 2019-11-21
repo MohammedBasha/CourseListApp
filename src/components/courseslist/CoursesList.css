@@ -6,3 +6,47 @@
 .courseslist-wrapper li {
     list-style-type: none;
 }
+
+.edit-form {
+    display: flex;
+}
+.edit-form > * {
+    padding: 7px;
+}
+
+.edit-form span {
+    flex: 3;
+    color: #999;
+}
+
+.edit-form button {
+    flex: 1;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #fff;
+    border: 0;
+}
+
+.edit-form button:first-of-type {
+    background-color: #999;
+}
+
+.edit-form button:last-child {
+    margin-right: 0;
+    background-color: rgb(240, 40, 40);
+}
+
+.update-form {
+    display: flex;
+}
+
+.update-form input {
+    flex: 4;
+    padding: 10px;
+}
+
+.update-form button {
+    flex: .93;
+    padding: 10px;
+    cursor: pointer;
+}
